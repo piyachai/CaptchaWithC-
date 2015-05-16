@@ -9,10 +9,20 @@ namespace CaptchaLibrary
 {
     public class ServiceCaptcha
     {
+
+
+        private Captcha captcha;
+
         public string getCaptcha()
         {
-            Captcha captcha = new Captcha(1,1,1,1);
+            
             return captcha.ToString();
+        }
+
+        public void setRandomNumber(int pattern, int leftOperand, int operatorSymbol, int rightOperand)
+        {
+            captcha = new Captcha(pattern, leftOperand, operatorSymbol, rightOperand);
+            
         }
     }
 }

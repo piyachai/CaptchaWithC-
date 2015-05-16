@@ -8,7 +8,7 @@ namespace CaptchaLibrary
 
 {
 
-    public class RandomNumber
+    public class RandomNumber : IRandomNumber
     {
         private const int MinRandomNumber = 1;
         
@@ -18,15 +18,20 @@ namespace CaptchaLibrary
 
         private const int MaxOperater = 3;
 
-        public int Pattern()
+        public int GetPattern()
         {
             return Randomizer(MinRandomNumber, MaxPattern);
         }             
-        public int Operand()
+        public int GetLeftOperand()
         {
             return Randomizer(MinRandomNumber, MaxOperand);
         }
-        public int Operater()
+
+        public int GetRightOperand()
+        {
+            return Randomizer(MinRandomNumber, MaxOperand);
+        }
+        public int GetOperater()
         {
             return Randomizer(MinRandomNumber, MaxOperater);
         }
